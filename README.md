@@ -89,7 +89,7 @@ Seven labelled queries are stored in `sql/queries.sql` and run by `run_queries.p
 
 The completed order amount mean is INR 269.91 versus a median of INR 135.00, with skewness about 4.61. Q1 is INR 64.80 and Q3 is INR 297.00; the upper fence is INR 645.30, with 897 values above it and none below. The largest absolute correlation is between `order_amount` and `discount_pct` (about −0.095), slightly larger in absolute value than the correlation between `order_amount` and `quantity` (about +0.087). Correlation of this size does not establish causation.
 
-## 7. Part B — customer segments and lapse prediction
+## Part B — customer segments and lapse prediction
 
 Run `python part_b.py` from the project root after installing `requirements.txt`. The script consumes only `data/clean/orders.csv`, `data/clean/customers.csv`, and the clean product catalogue, and writes its deliverables to `outputs/`.
 
@@ -117,7 +117,7 @@ The top five random-forest features and three largest-magnitude numeric logistic
 
 The retention list is illustrative and not a leakage-free evaluation because its Premium flag comes from whole-window RFM that includes the September label window, although the model features themselves use only pre-cutoff orders. Validate on a later time-based holdout before campaign deployment, monitor precision/recall and offer cost, and calibrate a contact threshold to retention-team capacity.
 
-## 8. Part C — support ticket triage with guardrails
+## Part C — support ticket triage with guardrails
 
 Run `python part_c.py` after Parts A and B. The pipeline processes `data/raw/tickets.csv` in file order and reads the segment names and Premium flags from `outputs/customer_segments.csv`. It writes `outputs/triage_results.csv` (few-shot, 100,000-token budget), `outputs/triage_budget_demo.csv` (zero-shot, 6,000-token budget), `outputs/zero_shot_confusion.csv`, `outputs/part_c_summary.json`, and `outputs/part_c_report.md`.
 
