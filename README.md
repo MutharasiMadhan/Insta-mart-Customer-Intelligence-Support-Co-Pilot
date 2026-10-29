@@ -141,8 +141,6 @@ The zero-shot budget demonstration uses a 6,000-token budget and records 84 `bud
 
 Only rule-validated categories (`classified_json` and the exactly-one-category `classified_keyword` fallback) are treated as automated classifications; invalid outputs and skipped/long/budget-exhausted tickets go to human review. The mock's accuracy is designed to match the assignment reference and does not establish real-world model performance. Before deployment, test with the original provided mock and then a real model under approved privacy controls, monitor category-level errors and retries, and audit the human-review queue. The Part B Premium flag is a post-hoc whole-window label, so any retention list based on it is illustrative and not a leakage-free evaluation.
 
-# Part C â€” Support Ticket Triage Results
-
 ## Guardrails and privacy
 
 Tickets: 164; empty skipped: 4; long flagged: 4.
